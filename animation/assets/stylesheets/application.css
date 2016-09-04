@@ -1,0 +1,115 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  background: #d0d2d3;
+}
+
+.codher {
+  background: #fff;
+  z-index: 2;
+  display: block;
+  height: 100px;
+  position: relative;
+  padding-left: 48px;
+  line-height: 100px;
+}
+
+.codher img {
+  height: 100px;
+  margin-right: 24px;
+  float: left;
+}
+
+.codher .title {
+  display: inline;
+  font-family: "Monoton", sans-serif;
+  color: rgb(249, 87, 77);
+  font-size: 40px;
+  animation: glow 1.5s infinite ease-in-out alternate;
+  text-decoration: none;
+}
+
+.world {
+  z-index: 1;
+  bottom: 0;
+  display: block;
+  height: 768px;
+  position: absolute;
+  width: 100%;
+
+  /* Background stuff */
+  background-image: url('../images/background.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+
+  /* Animation stuff */
+  animation-name: scrollBackground;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.hero {
+  bottom: 90px;
+  display: block;
+  height: 97px;
+  left: 10%;
+  object-fit: none;
+  object-position: 0 -100px;
+  position: absolute;
+  width: 76px;
+  animation: walk 0.5s infinite;
+}
+
+.hero__jumping {
+  animation: jump 0.5s 1 ease-in,
+             walk paused;
+}
+
+
+/* Animations */
+@keyframes scrollBackground {
+  from  { background-position-x: 0; }
+  to    { background-position-x: -1536px; }
+}
+
+@keyframes walk {
+  0%,
+  32.9999% { object-position: 0 -100px; }
+  33%,
+  65.9999% { object-position: -75px -100px; }
+  66%,
+  99.9999% { object-position: -150px -100px; }
+  100%     { object-position: -225px -100px; }
+}
+
+@keyframes jump {
+  0%    { bottom: 90px; }
+  50%   { bottom: 300px; }
+  100%  { bottom: 90px; }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff,
+                      0 0 20px #fff,
+                      0 0 30px #fff,
+                      0 0 40px rgba(249, 87, 77, 0.25),
+                      0 0 70px rgba(249, 87, 77, 0.25),
+                      0 0 80px rgba(249, 87, 77, 0.25),
+                      0 0 100px rgba(249, 87, 77, 0.25),
+                      0 0 150px rgba(249, 87, 77, 0.25);
+                      }
+  to   { text-shadow: 0 0 5px #fff,
+                      0 0 10px #fff,
+                      0 0 15px #fff,
+                      0 0 20px rgba(249, 87, 77, 0.45),
+                      0 0 35px rgba(249, 87, 77, 0.45),
+                      0 0 40px rgba(249, 87, 77, 0.45),
+                      0 0 50px rgba(249, 87, 77, 0.45),
+                      0 0 75px rgba(249, 87, 77, 0.45)
+                      }
+}
