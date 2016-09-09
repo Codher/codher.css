@@ -1,0 +1,238 @@
+body {
+  background-color: linen;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/*pinwheel*/
+
+.triangle-red {
+  border-bottom: 100px solid salmon;
+  border-left: 100px solid transparent;
+  transform: translate(-50%, 50%);
+}
+
+.triangle-blue {
+  border-bottom: 100px solid steelblue;
+  border-left: 100px solid transparent;
+  transform: translate(-50%, 50%) rotate(-120deg);
+  transform-origin: top right;
+}
+
+.triangle-yellow {
+  border-bottom: 100px solid khaki;
+  border-left: 100px solid transparent;
+  transform: translate(-50%, 50%) rotate(-90deg);
+  transform-origin: top left;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(50%, 50%);
+}
+
+.pinwheel {
+  animation-name: rotate;
+  display: inline-block;
+  animation-iteration-count: infinite;
+  animation-duration: 1.2s;
+  transform-origin: center;
+  animation-timing-function: linear;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  z-index: 2;
+}
+
+@keyframes rotate { 
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*stick*/
+.stick {
+  background-color: darkslategray;
+  height: 250px;
+  width: 10px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(450%, 25%);
+  z-index: 0;
+}
+
+/*cloud*/
+
+.cloud {
+  width: 350px; height: 120px;
+  background: paleturquoise;
+  opacity: 0.5;
+  border-radius: 100px;
+  position: absolute;
+  top: 10%;
+  left: 1%;
+}
+
+.cloud:after, .cloud:before {
+  content:"";
+  position: absolute;
+  background: paleturquoise;
+  z-index: -1;
+}
+
+.cloud:after {
+  width: 100px; height: 100px;
+  top: -50px; left: 50px;
+  border-radius: 100px;
+}
+
+.cloud:before {
+  width: 180px; height: 180px;
+  top: -90px; right: 50px;
+  border-radius: 200px;
+}
+
+/*clound animation*/
+
+.cloud-move {
+  animation-name: cloudmove;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+}
+
+@keyframes cloudmove { 
+  from {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(600px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/*clound2 animation*/
+.cloud2 {
+  background-color: lightgrey;
+  opacity: 0.8;
+}
+
+.cloud2:after, .cloud2:before {
+  background: lightgrey;
+
+}
+.cloud2-move {
+  animation-name: cloudtwomove;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  position: absolute;
+  z-index: 2;
+}
+
+@keyframes cloudtwomove { 
+  from {
+    transform: translateX(600px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(600px);
+  }
+}
+
+/*sun shape*/
+
+.sun {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: relative;
+  top: 2%;
+  left: 50%;
+  z-index: -1;
+
+}
+
+.pulse {
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1.2,1.2)
+  }
+  50% {
+    transform: scale(1,1);
+  }
+  to {
+    transform: scale(1.2,1.2);
+  }
+}
+
+/*grass*/
+
+.grass {
+  position: relative;
+  bottom: -50%;
+  transform: translateY(20%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.grass-triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 100px solid green;
+}
+
+.blow {
+  animation-name: blow;
+  animation-timing-function: linear;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blow {
+  from {
+    transform: skew(0deg,0deg);
+  }
+  50% {
+    transform: skew(6deg, 0deg);
+  }
+  to {
+    transform: skew(0deg, 0deg);
+  }
+}
+
+
+
+
+
+
+
+

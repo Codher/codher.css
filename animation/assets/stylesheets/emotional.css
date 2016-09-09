@@ -1,0 +1,213 @@
+.page-sec2{
+	padding: 40px;
+}
+.emotions {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 20px;
+	flex-basis: auto;
+
+	background-color: pink;
+}
+
+.emotion {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 400px;
+	height: 400px;
+	background-color: grey;
+	margin: 10px;
+}
+
+.joyous {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 150px;
+	height: 250px;
+	border-radius: 25% 25% 0 0;
+	animation: 
+	    joys-colour 3s infinite,
+		jump .2s 5s infinite ease-in;
+}
+.eye {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	border-radius: 50%;
+	border: 2px solid black;
+	margin-top: 40px;
+	height: 50px;
+	width: 50px;
+}
+.pupil {
+	border-radius: 50%;
+	background-color: black;
+	height: 20%;
+	width: 20%;	
+}
+.belt {
+	background-color: blue;
+	align-self: flex-end;
+	width: 100%;
+	height: 100px;
+}
+.fearful {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+	height: 90%;
+	animation: 
+		fears-colour 5s 1 forwards,
+		shrink 3s 2s 1 forwards,
+		shiver 0.05s 5s infinite alternate;	
+}
+
+.scared {
+	background-color: grey;
+	animation:
+		inside_pulse 2s infinite,
+		inside_pulse 0.75s 5s infinite;
+}
+
+.drunk {
+	height: 60%;
+	width: 60%;
+	background-color: #4D6D00;
+	animation:
+		drunken 3s infinite linear;
+	transform-origin: 50% 90%%;
+}
+
+.sadness {
+	height: 60%;
+	width: 60%;
+	background-color: #243078;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.tear {
+	height: 15px;
+	width: 15px;
+	background-color: #96CDFF;
+	margin-top: 33%;
+}
+
+.tear-1 {
+	animation: fall 0.75s infinite ease-in;
+}
+
+.tear-2 {
+	animation:  fall 0.75s 0.3s infinite ease-in;
+}
+
+.embarassed {
+	height: 90%;
+	width: 90%;
+	background: #FFE3C6;
+	animation:  shrink 2s 2s 1 forwards,
+				blush 2.5s 4s 1 forwards,
+				throb 1s 6s infinite alternate linear;
+
+}
+
+.happy {
+	height: 75%;
+	width: 75%;
+	background-color: yellow;
+	animation: skip 1.5s infinite linear;
+}
+
+/* colour animations */
+@keyframes fears-colour {
+	0%  { background-color: #000; }
+  	50% { background-color: #FF5858; }
+  	66% { background-color: #FF5858; }
+  	100%{ background-color: #7EB4EC; }
+}
+
+@keyframes joys-colour {
+  	0%  { background-color: orange; }
+  	33% { background-color: gold;}
+  	66% { background-color: yellow; }
+  	100%{ background-color: orange; }
+}
+
+/* pulses */
+@keyframes big_pulse {
+	0%   { height: 200px; width:200px; }
+	50%  { height: 300px; width:300px; }
+	100% { height: 200px; width:200px; }
+}
+
+@keyframes shrink {
+	from { height: 90%; width: 90%; }
+	to   { height: 40%; width: 40%; }
+}
+
+@keyframes inside_pulse {
+	from { height: 3%; width:100%; }
+	50%  { height: 30%; width:30%; }
+	to   { height: 3%; width:100%; }
+}
+
+@keyframes jump {
+	0%  { transform: translateY(0);  }
+	50% { transform: translateY(10%); }
+	100%{ transform: translateY(0);  }
+}
+
+@keyframes sway {
+	0%  { transform: translateX(0); }
+	25% { transform: translateX(10%); }
+	50% { transform: translateX(0); }
+	75% { transform: translateX(-10%); }
+	100%{ transform: translateX(0); }
+}
+
+@keyframes shiver {
+	0%  { transform: translateX(0); }
+	25% { transform: translateX(3%); }
+	50% { transform: translateX(0); }
+	75% { transform: translateX(-3%); }
+	100%{ transform: translateX(0); }
+}
+
+@keyframes drunken {
+	0%   { transform: translateX(0) rotate(0deg); }
+	25%  { transform: translateX(-10%) rotate(-10deg); }
+	50%  { transform: translateX(0) rotate(0deg); }
+	75%  { transform: translateX(10%) rotate(10deg); }
+	100% { transform: translateX(0) rotate(0deg); }
+}
+
+@keyframes fall {
+	from { transform: translateY(0); }
+	to   { transform: translateY(600%); }
+}
+
+@keyframes blush {
+	from { background-color: #FFE3C6; } 
+	to   { background-color: #FF3D3D; } 
+}
+
+@keyframes throb {
+	from { background-color: #FF3D3D; }
+	to   { background: #AC0001; }
+}
+
+@keyframes skip {
+	0%   { transform: translateX(0%) translateY(0%) rotate(0); }
+	25%  { transform: translateX(15%) translateY(20%) rotate(10deg); }
+	50%  { transform: translateX(0%) translateY(0%) rotate(0); }
+	75%  { transform: translateX(-15%) translateY(20%) rotate(-10deg); }
+	100% { transform: translateX(0%) translateY(0%) rotate(0); }
+}
