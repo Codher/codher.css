@@ -1,0 +1,73 @@
+/* Animations */
+
+/*
+ *
+ * HELLO! BEFORE YOU CONTINUE:
+ * Don't read this file until you've tried to create your own animations
+ * These are not the only ways to achieve this effects, it will be more useful
+ * for you if you try to create your own and learn by yourself!
+ *
+ */
+
+@keyframes skip {
+	0%   { transform: translateX(0%) translateY(0%) rotate(0); }
+	25%  { transform: translateX(15%) translateY(20%) rotate(10deg); }
+	50%  { transform: translateX(0%) translateY(0%) rotate(0); }
+	75%  { transform: translateX(-15%) translateY(20%) rotate(-10deg); }
+	100% { transform: translateX(0%) translateY(0%) rotate(0); }
+}
+
+@keyframes blushAndPale {
+	0%   { background-color: #000; }
+	50%  { background-color: #ff5858; }
+	66%  { background-color: #ff5858; }
+	100% { background-color: #7eb4ec; }
+}
+
+@keyframes shrink {
+	from { height: 90%; width: 90%; }
+	to   { height: 40%; width: 40%; }
+}
+
+@keyframes breathe {
+	0%   { height: 3%; width: 90%; }
+	50%  { height: 30%; width: 30%; }
+	100% { height: 3%; width: 90%; }
+}
+
+@keyframes jump {
+	0%   { transform: translateY(0);  }
+	50%  { transform: translateY(10%); }
+	100% { transform: translateY(0);  }
+}
+
+@keyframes shiver {
+	0%   { transform: translateX(0); }
+	25%  { transform: translateX(3%); }
+	50%  { transform: translateX(0); }
+	75%  { transform: translateX(-3%); }
+	100% { transform: translateX(0); }
+}
+
+@keyframes drunkWalk {
+	0%   { transform: translateX(0) rotate(0deg); }
+	25%  { transform: translateX(-10%) rotate(-10deg); }
+	50%  { transform: translateX(0) rotate(0deg); }
+	75%  { transform: translateX(10%) rotate(10deg); }
+	100% { transform: translateX(0) rotate(0deg); }
+}
+
+@keyframes fall {
+	from { transform: translateY(0); }
+	to   { transform: translateY(600%); }
+}
+
+@keyframes blush {
+	from { background-color: #ffe3c6; }
+	to   { background-color: #ff3d3d; }
+}
+
+@keyframes throb {
+	from { background-color: #ff3d3d; }
+	to   { background: #ac0001; }
+}

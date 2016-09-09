@@ -73,8 +73,8 @@ body {
 
 /* Animations */
 @keyframes scrollBackground {
-  from  { background-position-x: 0; }
-  to    { background-position-x: -1536px; }
+  from  { background-position: 0; }
+  to    { background-position: -1536px; }
 }
 
 @keyframes walk {
